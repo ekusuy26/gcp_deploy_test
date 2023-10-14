@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  frontend:
+    build: 
+      context: .
+      dockerfile: ./infra/frontend/Dockerfile
+    container_name: delpy_frontend
+    working_dir: '/root/src'
+    tty: true
+    volumes:
+      - ./src/frontend:/root/src
+    ports:
+      - 80:3000
